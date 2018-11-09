@@ -8,8 +8,9 @@ class OrdersController < ApplicationController
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-
+    
     if order.valid?
+      puts UserMailer.order_email(order)
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
