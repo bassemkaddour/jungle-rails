@@ -7,8 +7,7 @@
   <body>
     <h1>Welcome to example.com, <%= @order.email %></h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @order.total_cents %>.<br>
+      You order total is: $<%= @order.total_cents / 100 %>.<br>
     </p>
     <p>
       To login to the site, just follow this link: <%= @order.id %>.
