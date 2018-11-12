@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
       redirect_to login_path
     end 
   end 
-
+  
   def review_owner
     @review = Review.find params[:id]
     unless @review.user_id == current_user.id
